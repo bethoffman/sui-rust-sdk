@@ -19,7 +19,7 @@ message ExecuteTransactionRequest {
   // The transaction to execute.
   optional Transaction transaction = 1;
 
-  // Set of `UserSiganture`s authorizing the execution of the provided
+  // Set of `UserSignatures authorizing the execution of the provided
   // transaction.
   repeated UserSignature signatures = 2;
 
@@ -38,7 +38,7 @@ message ExecuteTransactionResponse {
 
 // Indicates the finality of the executed transaction.
 message TransactionFinality {
-  oneof finality {
+  one of finality {
     // A quorum certificate certifying that a transaction is final but might not
     // be included in a checkpoint yet.
     ValidatorAggregatedSignature certified = 1;
